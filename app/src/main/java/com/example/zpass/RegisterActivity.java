@@ -24,14 +24,15 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class RegisterActivity extends AppCompatActivity {
-
     private static final String TAG = "RegisterActivity";
 
-    EditText nameEditText, emailEditText, passwordEditText;
-    Button registerButton;
+    private EditText nameEditText, emailEditText, passwordEditText, confirmPasswordEditText;
+    private Button registerButton;
+
+    private final FirebaseFirestore db = FirebaseFirestore.getInstance();
     private final FirebaseAuth auth = FirebaseAuth.getInstance();
-    private User user = new User();
-    final FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+    private final User user = new User();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,17 +43,28 @@ public class RegisterActivity extends AppCompatActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (nameEditText.getText().toString().isEmpty()) {
+                String strName = nameEditText.getText().toString().trim();
+                String strEmail = emailEditText.getText().toString().trim();
+                String strPassword = passwordEditText.getText().toString().trim();
+                String strConfirmPassword = confirmPasswordEditText.getText().toString().trim();
+
+                if (strName.isEmpty()) {
                     Toast.makeText(RegisterActivity.this, "Name is empty", Toast.LENGTH_SHORT).show();
                 }
-                if (emailEditText.getText().toString().isEmpty()) {
+                if (strEmail.isEmpty()) {
                     Toast.makeText(RegisterActivity.this, "Email is empty", Toast.LENGTH_SHORT).show();
                 }
-                if (passwordEditText.getText().toString().isEmpty()) {
+                if (strPassword.isEmpty()) {
                     Toast.makeText(RegisterActivity.this, "Password is empty", Toast.LENGTH_SHORT).show();
                 }
+                if (strConfirmPassword.isEmpty()) {
+                    Toast.makeText(RegisterActivity.this, "Confirm password is empty", Toast.LENGTH_SHORT).show();
+                }
+                if (!strPassword.equals(strConfirmPassword)) {
+                    Toast.makeText(RegisterActivity.this, "Password is not same!", Toast.LENGTH_SHORT).show();
+                }
 
-                if (!nameEditText.getText().toString().isEmpty() && !emailEditText.getText().toString().isEmpty() && !passwordEditText.getText().toString().isEmpty()) {
+                if (!strName.isEmpty() && !strEmail.isEmpty() && !strPassword.isEmpty() && !strConfirmPassword.isEmpty()) {
                     registerUser(nameEditText.getText().toString(), emailEditText.getText().toString(), passwordEditText.getText().toString());
                 } else {
                     Toast.makeText(RegisterActivity.this, "Please input all information", Toast.LENGTH_SHORT).show();
@@ -120,9 +132,10 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void init() {
-        nameEditText = findViewById(R.id.EditTextName);
-        emailEditText = findViewById(R.id.EditTextEmail);
-        passwordEditText = findViewById(R.id.EditTextPassword);
+        nameEditText = findViewById(R.id.EditTextNameRegister);
+        emailEditText = findViewById(R.id.EditTextEmailRegister);
+        passwordEditText = findViewById(R.id.EditTextPasswordRegister);
+        confirmPasswordEditText = findViewById(R.id.EditTextConfirmPasswordRegister);
         registerButton = findViewById(R.id.ButtonRegister);
     }
 }

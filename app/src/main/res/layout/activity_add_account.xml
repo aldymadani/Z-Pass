@@ -2,12 +2,13 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/EditTextEmail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActivity">
+    tools:context=".AddAccountActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TextLayoutName"
+        android:id="@+id/TextLayoutAccountName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
@@ -17,7 +18,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/EditTextNameRegister"
+            android:id="@+id/EditTextAccountName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
@@ -25,17 +26,17 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TextLayoutEmail"
+        android:id="@+id/TextLayoutEmailAddAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
-        android:hint="E-mail Address"
+        android:hint="E-mail address"
         app:startIconDrawable="@drawable/ic_email_white_24dp"
-        app:layout_constraintEnd_toEndOf="@+id/TextLayoutName"
-        app:layout_constraintStart_toStartOf="@+id/TextLayoutName"
-        app:layout_constraintTop_toBottomOf="@+id/TextLayoutName">
+        app:layout_constraintEnd_toEndOf="@+id/TextLayoutAccountName"
+        app:layout_constraintStart_toStartOf="@+id/TextLayoutAccountName"
+        app:layout_constraintTop_toBottomOf="@+id/TextLayoutAccountName">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/EditTextEmailRegister"
+            android:id="@+id/EditTextEmailAddAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
@@ -43,37 +44,18 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TextLayoutPassword"
+        android:id="@+id/TextLayoutPasswordAddAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
         android:hint="Password"
         app:startIconDrawable="@drawable/ic_lock_white_24dp"
         app:endIconMode="password_toggle"
-        app:layout_constraintEnd_toEndOf="@+id/TextLayoutEmail"
-        app:layout_constraintStart_toStartOf="@+id/TextLayoutEmail"
-        app:layout_constraintTop_toBottomOf="@+id/TextLayoutEmail">
+        app:layout_constraintEnd_toEndOf="@+id/TextLayoutEmailAddAccount"
+        app:layout_constraintStart_toStartOf="@+id/TextLayoutEmailAddAccount"
+        app:layout_constraintTop_toBottomOf="@+id/TextLayoutEmailAddAccount">
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/EditTextPasswordRegister"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:ems="10"/>
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/TextLayoutConfirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="32dp"
-        android:hint="Confirm Password"
-        app:startIconDrawable="@drawable/ic_lock_white_24dp"
-        app:endIconMode="password_toggle"
-        app:layout_constraintEnd_toEndOf="@+id/TextLayoutPassword"
-        app:layout_constraintStart_toStartOf="@+id/TextLayoutPassword"
-        app:layout_constraintTop_toBottomOf="@+id/TextLayoutPassword">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/EditTextConfirmPasswordRegister"
+            android:id="@+id/EditTextPasswordAddAccount"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -81,13 +63,13 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/ButtonRegister"
+        android:id="@+id/ButtonAddPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Register"
-        app:layout_constraintEnd_toEndOf="@+id/TextLayoutConfirmPassword"
-        app:layout_constraintStart_toStartOf="@+id/TextLayoutConfirmPassword"
-        app:layout_constraintTop_toBottomOf="@+id/TextLayoutConfirmPassword" />
+        android:text="Add Account"
+        app:layout_constraintEnd_toEndOf="@+id/TextLayoutPasswordAddAccount"
+        app:layout_constraintStart_toStartOf="@+id/TextLayoutPasswordAddAccount"
+        app:layout_constraintTop_toBottomOf="@+id/TextLayoutPasswordAddAccount" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

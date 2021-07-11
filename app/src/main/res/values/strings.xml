@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Z-Pass</string>
+    <string name="strLogout">Logout</string>
+    <string name="strAddAccountTitle">Add Account</string>
+    <string name="strAccountDetailsTitle">Account Details</string>
+    <string name="strRegisterTitle">Register</string>
+    <string name="strLoginTitle">Login</string>
+    <string name="strDelete">Delete</string>
 </resources>
