@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ZPass">
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".EditPasswordActivity"></activity>
+        <activity android:name=".AddPasswordActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
