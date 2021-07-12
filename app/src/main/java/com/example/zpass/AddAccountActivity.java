@@ -116,7 +116,7 @@ public class AddAccountActivity extends AppCompatActivity {
         account.setPassword(account.getPassword());
         account.setOwner(uuid);
         account.setId(accountId);
-        account.setImageUrl("https://firebasestorage.googleapis.com/v0/b/z-pass-6377f.appspot.com/o/user.svg?alt=media&token=04a5fc5f-84a9-4789-bb4f-9a0212c1fdf3");
+        account.setImageUrl("https://firebasestorage.googleapis.com/v0/b/z-pass-6377f.appspot.com/o/user.png?alt=media&token=73e8417c-8158-482c-9fec-28e67419c28a");
         db.collection("account")
                 .document(accountId)
                 .set(account)
